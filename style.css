@@ -1,0 +1,16 @@
+.card img {
+    width: 200px; /* Thumbnail size */
+    height: 200px;
+    object-fit: cover; /* Ensures the image fits well */
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid #A359A0;
+}
+.card img {
+    width: 200px; /* Thumbnail size */
+    height: 200px;
+    object-fit: cover; /* Ensures the image fits well */
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid #A359A0;
+}

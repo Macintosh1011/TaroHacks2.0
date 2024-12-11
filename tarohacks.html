@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarohacks 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f9f9f9;
+            color: #222222;
+            line-height: 1.6;
+        }
+
+/* Header */
+header {
+    background: linear-gradient(180deg, #A359A0, #e0bce7);
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers content vertically */
+    position: relative;
+    text-align: center;
+    padding: 0 20px; /* Remove vertical padding */
+}
+header img {
+    position: absolute;
+    left: 20px; /* Keeps the image on the left */
+    width: 80px; /* Adjust size for better alignment */
+    height: auto;
+    top: 50%; /* Vertically centers the image */
+    transform: translateY(-50%); /* Adjust for proper vertical centering */
+}
+header h1 {
+    font-size: 3.5rem;
+    font-family: 'Raleway', sans-serif;
+    margin: 0; /* Remove margin to ensure alignment */
+}
+
+        /* Countdown Section */
+        #countdown {
+            background: linear-gradient(90deg, #e0bce7, #e0bce7);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        #countdown h2 {
+            font-size: 2.5rem;
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 20px;
+        }
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .countdown-timer div {
+            background: #fff;
+            color: #A359A0;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 120px;
+        }
+        .countdown-timer div span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .countdown-timer div small {
+            display: block;
+            margin-top: 5px;
+            font-size: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #222222;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #A359A0;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            font-family: 'Raleway', sans-serif;
+            color: #A359A0;
+            margin-bottom: 20px;
+        }
+        section p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Themes */
+        .themes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .theme {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .theme h3 {
+            color: #A359A0;
+            margin-bottom: 10px;
+        }
+
+        /* Statistics */
+        .statistics {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #A359A0;
+        }
+
+        /* Judges and Team */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            color: #A359A0;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        
+
+        /* Schedule */
+        .schedule {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 800px;
+            line-height: 2;
+        }
+        .schedule h3 {
+            margin-top: 20px;
+            color: #A359A0;
+        }
+
+        /* Sponsors */
+        .sponsors {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .sponsor-logo {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Contact Us */
+        #contact {
+            padding: 40px 20px;
+            background: #e0bce7;
+            color: #222;
+            text-align: center;
+        }
+        #contact h2 {
+            margin-bottom: 20px;
+        }
+        #contact a {
+            color: #A359A0;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        #contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            padding: 15px 40px;
+            background-color: #A359A0;
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #e0bce7;
+        }
+
+        /* Footer */
+        footer {
+            background: #222222;
+            color: #FFFFFF;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="images/logo.png" alt="Tarohacks Logo">
+    <h1>Tarohacks 2024</h1>
+</header>
+
+
+
+<nav>
+    <a href="#themes">Themes</a>
+    <a href="#last-year">Last Year</a>
+    <a href="#team">Team</a>
+    <a href="#judges">Judges</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#signup">Sign Up</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+<section id="countdown">
+    <h2>Countdown to Tarohacks</h2>
+    <div class="countdown-timer" id="countdown-timer">
+        <div>
+            <span id="days">0</span>
+            <small>Days</small>
+        </div>
+        <div>
+            <span id="hours">0</span>
+            <small>Hours</small>
+        </div>
+        <div>
+            <span id="minutes">0</span>
+            <small>Minutes</small>
+        </div>
+        <div>
+            <span id="seconds">0</span>
+            <small>Seconds</small>
+        </div>
+    </div>
+</section>
+
+<section id="themes">
+    <h2>Hackathon Themes</h2>
+    <p>Explore how AI and ML can transform the following fields:</p>
+    <div class="themes">
+        <div class="theme">
+            <h3>Healthcare</h3>
+            <p>Revolutionize patient care, diagnosis, and healthcare systems with AI.</p>
+        </div>
+        <div class="theme">
+            <h3>Earth Sustainability</h3>
+            <p>Use machine learning to address climate change and environmental challenges.</p>
+        </div>
+        <div class="theme">
+            <h3>Marine Biology</h3>
+            <p>Apply AI to protect marine ecosystems and study ocean biodiversity.</p>
+        </div>
+    </div>
+</section>
+
+<section id="last-year">
+    <h2>Last Year</h2>
+    <p>Last year, Tarohacks was a massive success! Here are some highlights:</p>
+    <div class="statistics">
+        <div class="stat">
+            <span>150+</span>
+            Participants
+        </div>
+        <div class="stat">
+            <span>30</span>
+            Projects Submitted
+        </div>
+        <div class="stat">
+            <span>3</span>
+            Winning Teams
+        </div>
+    </div>
+    <p>Check out some photos from last year:</p>
+    <img src="last_year_photo.png" alt="Last Year Hackathon" style="width: 100%; max-width: 600px; margin-top: 20px;">
+</section>
+
+<section id="judges">
+    <h2>Meet the Judges</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="judge_1.png" alt="Judge 1">
+            <h3>Daniel P.</h3>
+            <p>Head of AI, HealthTech Corp.</p>
+        </div>
+        <div class="card">
+            <img src="judge_2.jpg" alt="Judge 2">
+            <h3>Maayan Rossman</h3>
+            <p>CTO, MedStartups</p>
+        </div>
+        <div class="card">
+            <img src="judge_3.png" alt="Judge 3">
+            <h3>Bryan Delgado</h3>
+            <p>Lead Scientist, MarineTech</p>
+        </div>
+    </div>
+</section>
+
+<section id="team">
+    <h2>Meet the Team</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="idan_pfp.png" alt="Idan">
+            <h3>Idan</h3>
+            <p>Lead Organizer</p>
+        </div>
+        <div class="card">
+            <img src="mishali_pfp.png" alt="Mishali">
+            <h3>Mishali</h3>
+            <p>Co-Team Leader</p>
+        </div>
+        <div class="card">
+            <img src="mahati_pfp.png" alt="Mahati">
+            <h3>Mahati</h3>
+            <p>Co-Outreach Lead</p>
+        </div>
+        <div class="card">
+            <img src="aadit_pfp.png" alt="Aadit">
+            <h3>Aadit</h3>
+            <p>Co-Outreach Lead</p>
+        </div>
+        <div class="card">
+            <img src="aaron_pfp.png" alt="Aaron">
+            <h3>Aaron</h3>
+            <p>Hardware Lead</p>
+        </div>
+        <div class="card">
+            <img src="lavernie_pfp.png" alt="Lavernie">
+            <h3>Lavernie</h3>
+            <p>Software Lead</p>
+        </div>
+        <div class="card">
+            <img src="celine_pfp.png" alt="Celine">
+            <h3>Celine</h3>
+            <p>Team Member</p>
+        </div>
+        <div class="card">
+            <img src="vansh_pfp.png" alt="Vansh">
+            <h3>Vansh</h3>
+            <p>Team Member</p>
+        </div>
+        <div class="card">
+            <img src="kourosh_pfp.png" alt="Kourosh">
+            <h3>Kourosh</h3>
+            <p>Team Member</p>
+        </div>
+        <div class="card">
+            <img src="tristian_pfp.png" alt="Tristan">
+            <h3>Tristan</h3>
+            <p>Team Member</p>
+        </div>
+    </div>
+</section>
+
+<section id="schedule">
+    <h2>Schedule</h2>
+    <div class="schedule">
+        <h3>TaroHacks Day 1</h3>
+        <p><strong>9:00 AM</strong> - Doors Open</p>
+        <p>Teams check-in and setup at their designated areas</p>
+        <p><strong>9:30 AM</strong> - Opening Ceremony</p>
+        <p>Teams are introduced to the challenge and criteria</p>
+        <p><strong>10:00 AM</strong> - Team Brainstorm</p>
+        <p>Teams discuss ideas of interest and potential projects</p>
+        <p><strong>10:30 AM</strong> - Project Worktime</p>
+        <p>Teams start working on their projects</p>
+        <p><strong>12:30 PM</strong> - Lunch</p>
+        <p>Time for food!</p>
+        <p><strong>1:00 PM</strong> - Project Worktime</p>
+        <p>Teams work on their projects</p>
+        <p><strong>3:00 PM</strong> - Workshop 1</p>
+        <p>A speaker gives a workshop to help make projects better</p>
+        <p><strong>4:00 PM</strong> - Project Worktime</p>
+        <p>Teams start work on their projects</p>
+        <p><strong>6:00 PM</strong> - Dinner</p>
+        <p>Time for food!</p>
+        <p><strong>7:00 PM</strong> - Project Worktime</p>
+        <p>Teams start working on their projects</p>
+        <p><strong>9:00 PM</strong> - Day 1 Over</p>
+        <p>Teams go home and rest for the next day</p>
+
+        <h3>TaroHacks Day 2</h3>
+        <p><strong>9:00 AM</strong> - Doors Open</p>
+        <p>Teams check-in and setup at their designated areas</p>
+        <p><strong>9:30 AM</strong> - Project Worktime</p>
+        <p>Teams continue working on their projects</p>
+        <p><strong>12:30 PM</strong> - Lunch</p>
+        <p>Time for food!</p>
+        <p><strong>1:00 PM</strong> - Project Worktime</p>
+        <p>Teams work on their projects</p>
+        <p><strong>3:00 PM</strong> - Workshop 2</p>
+        <p>A speaker gives a workshop to help make projects better</p>
+        <p><strong>4:00 PM</strong> - Project Worktime</p>
+        <p>Teams continue to work on their projects</p>
+        <p><strong>6:00 PM</strong> - Dinner</p>
+        <p>Time for food!</p>
+        <p><strong>7:00 PM</strong> - Project Presentations</p>
+        <p>Teams present the projects they created</p>
+        <p><strong>8:00 PM</strong> - Closing Ceremonies/Awards</p>
+        <p>Teams are given awards and get their pictures taken</p>
+        <p><strong>9:00 PM</strong> - Day 2 Over</p>
+        <p>The hackathon is over</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or need assistance, feel free to reach out to us!</p>
+    <a href="mailto:teamtaroftc@gmail.com">teamtaroftc@gmail.com</a>
+</section>
+
+<footer>
+    <p>&copy; 2024 Tarohacks. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Countdown Logic
+    function updateCountdown() {
+        const eventDate = new Date("January 4, 2025 09:00:00").getTime();
+        const now = new Date().getTime();
+        const timeLeft = eventDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (timeLeft < 0) {
+            document.getElementById("countdown-timer").innerHTML = "<h3>Event Started!</h3>";
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
